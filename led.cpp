@@ -1,7 +1,7 @@
 /*
   led.cpp - Implementation of an LED controller
   Created by Patrick Stockton
-  version: 0.0.2
+  version: 0.0.3
 */
 
 #include "Arduino.h"
@@ -13,28 +13,23 @@ namespace slacker
   {
     _previousMillis = 0;
     _ledState = LOW;
+    _brightness = 255;
     _pin = pin;
+    _blinkCount = 0;
     pinMode(pin, OUTPUT);
   }
 
   void Led::On()
   {
-    digitalWrite(_pin, HIGH);
-    _ledState = HIGH;
-  }
-
-  void Led::On(int brightness)
-  {
-    if (brightness < 0)
+    if (_brightness == 255)
     {
-      brightness = 0;
+      digitalWrite(_pin, HIGH);
     }
-    if (brightness > 255)
+    else
     {
-      brightness = 255;
+      analogWrite(_pin, _brightness);
     }
-
-    analogWrite(_pin, brightness);
+    
     _ledState = HIGH;
   }
 
@@ -42,6 +37,43 @@ namespace slacker
   {
     digitalWrite(_pin, LOW);
     _ledState = LOW;
+  }
+
+  void Led::SetBrightness(int brightness)
+  {
+    // I have no idea if this is required or not, but better safe than sorry
+    if(brightness < 0)
+    {
+      brightness = 0;
+    }
+
+    if (brightness > 255)
+    {
+      brightness = 255;
+    }
+
+    _brightness = brightness;
+
+    // If the LED is on then we need to change the brightness now
+    if (_ledState == HIGH)
+    {
+      this -> On();
+    }
+  }
+
+  int Led::GetBrightness()
+  {
+    return _brightness;
+  }
+
+  unsigned long long Led::GetBlinkCount()
+  {
+    return _blinkCount;
+  }
+
+  void Led::ResetBlinkCount()
+  {
+    _blinkCount = 0;
   }
 
   void Led::Blink(int blinkRate)
@@ -55,21 +87,7 @@ namespace slacker
       else
       {
         this->Off();
-      }
-    }
-  }
-
-  void Led::Blink(int blinkRate,int brightness)
-  {
-    if(this -> checkMillis(blinkRate))
-    {
-      if(_ledState == LOW)
-      {
-        this->On(brightness);
-      }
-      else
-      {
-        this->Off();
+        _blinkCount++;
       }
     }
   }
