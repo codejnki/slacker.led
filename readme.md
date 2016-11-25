@@ -9,7 +9,7 @@ To install this library just place the entire folder as a sub folder in your lib
 ```cpp
 #include <led.h>
 
-Led _led(13);  // let's just use the built in for now
+slacker::Led _led(13);  // let's just use the built in for now
 
 // your awesome code goes here
 ```
