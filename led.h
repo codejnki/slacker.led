@@ -1,7 +1,7 @@
 /*
   Led.h - Library for controlling a led. 
   Created by Patrick Stockton
-  version: 0.0.2
+  version: 0.0.3
 */
 
 #ifndef led_h
@@ -16,10 +16,12 @@ namespace slacker
     public:
       Led(int pin);
       void On();
-      void On(int brightness);
       void Off();
+      void SetBrightness(int brightness);
+      int GetBrightness();
       void Blink(int blinkRate);
-      void Blink(int blinkRate, int brightness);
+      unsigned long long GetBlinkCount();
+      void ResetBlinkCount();
       bool GetState();
 
     private:
@@ -27,7 +29,9 @@ namespace slacker
       int _pin;
       int _blinkRate;
       int _ledState;
+      int _brightness;
       unsigned long _previousMillis;
+      unsigned long long _blinkCount;
   };
 }
 

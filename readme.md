@@ -23,16 +23,10 @@ On()
 This will turn the Led on.
 
 ```cpp
-On(int brightness)
-```
-
-This will turn the Led on using the analog write
-
-```cpp
 Off()
 ```
 
-Three guesses as to what this one does.
+Surprise!  This turns it off.
 
 ```cpp
 Blink(int blinkRate);
@@ -41,16 +35,31 @@ Blink(int blinkRate);
 This will blinks the led at the rate in milliseconds you specify.  This blink happens in a non-blocking manner so you can do other things.
 
 ```cpp
-Blink(int blinkRate, int brightness);
-```
-
-Same as the blink method but uses analog write to control the brightness of your LED.  For those times you want a less intense blink.
-
-```cpp
 GetState()
 ```
 
-The LED class tracks the current state of the LED and this simply returns in.  Using either the `On()` or `Off()` methods will change this state.  This is useful if you've lost track of what the state of your LED is.
+The LED class tracks the current state of the LED and this simply returns in.  Using either the `On()` or `Off()` methods will change this state.  This is useful if you've lost track of what the state of your LED is.  Using the blink method will also toggle this.
 
+```cpp
+SetBrightness(int brightness)
+```
 
+Sets the brightness of the led using an anlog out.  The default state of the LED is set to 255 and if it is still 255 a digital out will be used instead.
 
+```cpp
+GetBrightness()
+```
+
+Returns the current brightness.  Useful if you aren't tracking it yourself.
+
+```cpp
+GetBlinkCount()
+```
+
+When using the blink function each time the LED turns off a counter is incremented.  This is an unsigned long long, so there's a good chance that the universe will implode before you overrun this.
+
+```cpp
+ResetBlinkCount()
+```
+
+If you are using the interal blink counter to track things this method will reset the counter to 0.

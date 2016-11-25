@@ -7,8 +7,8 @@
 
 // This example shows how to do blinking the hard way with the slacker.led library
 
-// create a new instance of a led_h
-Led _led(13);
+// create a new instance of a led
+slacker::Led _led(13);
 
 void setup()
 {
