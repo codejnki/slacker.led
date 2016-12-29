@@ -1,0 +1,17 @@
+{
+  "name" : "slacker.led",
+  "keywords" : "arduino, led",
+  "description" : "A utility library for Arduino that gives some easy methods for a LED",
+  "authors" :
+  {
+    "name" : "Patrick Stockton",
+    "url": "http://www.naslacker.com"
+  },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/codejnki/slacker.led"
+  },
+  "frameworks" : "arduino",
+  "platforms" : "atmelavr"
+}
