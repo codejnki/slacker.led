@@ -5,7 +5,7 @@
   version: 0.0.1
 */
 
-#include <led.h>
+#include <led.hpp>
 
 slacker::Led _led(13);
 

@@ -1,35 +1,26 @@
 {
-  "configurations": [
-    {
-      "name": "Mac",
-      "includePath": [
-        "/usr/include",
-        "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino"
-      ],
-      "browse": {
-        "limitSymbolsToIncludedHeaders": true,
-        "databaseFilename": ""
-      }
-    },
-    {
-      "name": "Linux",
-      "includePath": [
-        "/usr/include"
-      ],
-      "browse": {
-        "limitSymbolsToIncludedHeaders": true,
-        "databaseFilename": ""
-      }
-    },
-    {
-      "name": "Win32",
-      "includePath": [
-        "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include"
-      ],
-      "browse": {
-        "limitSymbolsToIncludedHeaders": true,
-        "databaseFilename": ""
-      }
-    }
-  ]
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\Program Files (x86)\\Arduino\\tools\\**",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.16299.0",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.13.26128/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64",
+            "forcedInclude": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ]
+        }
+    ],
+    "version": 4
 }

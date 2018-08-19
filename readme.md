@@ -2,12 +2,12 @@
 
 This is a very simple LED library which I wrote to give myself some practice.  It offers up a LED class with some useful functions.
 
-## Installation and useage
+## Installation and usage
 
 To install this library just place the entire folder as a sub folder in your library folder.  You should just be able to clone this repo and begin using right away.
 
 ```cpp
-#include <led.h>
+#include <led.hpp>
 
 slacker::Led _led(13);  // let's just use the built in for now
 
@@ -44,7 +44,7 @@ The LED class tracks the current state of the LED and this simply returns in.  U
 SetBrightness(int brightness)
 ```
 
-Sets the brightness of the led using an anlog out.  The default state of the LED is set to 255 and if it is still 255 a digital out will be used instead.
+Sets the brightness of the led using an analog out.  The default state of the LED is set to 255 and if it is still 255 a digital out will be used instead.
 
 ```cpp
 GetBrightness()
@@ -62,4 +62,4 @@ When using the blink function each time the LED turns off a counter is increment
 ResetBlinkCount()
 ```
 
-If you are using the interal blink counter to track things this method will reset the counter to 0.
+If you are using the internal blink counter to track things this method will reset the counter to 0.

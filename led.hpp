@@ -1,5 +1,5 @@
 /*
-  Led.h - Library for controlling a led. 
+  Library for controlling a led. 
   Created by Patrick Stockton
   version: 0.0.3
 */
