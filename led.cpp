@@ -1,11 +1,11 @@
 /*
-  led.cpp - Implementation of an LED controller
+  Implementation of an LED controller
   Created by Patrick Stockton
   version: 0.0.3
 */
 
 #include "Arduino.h"
-#include "led.h"
+#include "led.hpp"
 
 namespace slacker 
 {

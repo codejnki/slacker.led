@@ -1,4 +1,4 @@
-#include <led.h>
+#include <led.hpp>
 
 // Example for the slacker.led library
 // by Patrick Stockton <http://www.naslacker.com>
